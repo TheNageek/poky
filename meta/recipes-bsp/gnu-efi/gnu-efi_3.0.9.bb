@@ -37,7 +37,8 @@ def gnu_efi_arch(d):
     return tarch
 
 EXTRA_OEMAKE = "'ARCH=${@gnu_efi_arch(d)}' 'CC=${CC}' 'AS=${AS}' 'LD=${LD}' 'AR=${AR}' \
-                'RANLIB=${RANLIB}' 'OBJCOPY=${OBJCOPY}' 'PREFIX=${prefix}' 'LIBDIR=${libdir}' \
+                'RANLIB=${RANLIB}' 'OBJCOPY=${OBJCOPY}' 'PREFIX=${prefix}' 'LIBDIR=${libdir}'
+                'INCDIR=${S}/inc/efi/x86_64' \
                 "
 
 # gnu-efi's Makefile treats prefix as toolchain prefix, so don't
