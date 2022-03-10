@@ -1,0 +1,21 @@
+ERROR: ParseError at /home/kwalsh/workspace/poky/meta/recipes-bsp/grub/grub-efi_2.04.bb:3: Could not include required file conf/image-uefi.conf
+WARNING: /home/kwalsh/workspace/poky/meta/recipes-bsp/grub/grub_2.04.bb: Unable to get checksum for grub-native SRC_URI entry CVE-2020-10713.patch: file could not be found
+WARNING: /home/kwalsh/workspace/poky/meta/recipes-bsp/grub/grub_2.04.bb: Unable to get checksum for grub-native SRC_URI entry calloc-Make-sure-we-always-have-an-overflow-checking.patch: file could not be found
+WARNING: /home/kwalsh/workspace/poky/meta/recipes-bsp/grub/grub_2.04.bb: Unable to get checksum for grub-native SRC_URI entry lvm-Add-LVM-cache-logical-volume-handling.patch: file could not be found
+WARNING: /home/kwalsh/workspace/poky/meta/recipes-bsp/grub/grub_2.04.bb: Unable to get checksum for grub-native SRC_URI entry CVE-2020-14308-calloc-Use-calloc-at-most-places.patch: file could not be found
+WARNING: /home/kwalsh/workspace/poky/meta/recipes-bsp/grub/grub_2.04.bb: Unable to get checksum for grub-native SRC_URI entry safemath-Add-some-arithmetic-primitives-that-check-f.patch: file could not be found
+WARNING: /home/kwalsh/workspace/poky/meta/recipes-bsp/grub/grub_2.04.bb: Unable to get checksum for grub-native SRC_URI entry CVE-2020-14309-CVE-2020-14310-CVE-2020-14311-malloc-Use-overflow-checking-primitives-where-we-do-.patch: file could not be found
+WARNING: /home/kwalsh/workspace/poky/meta/recipes-bsp/grub/grub_2.04.bb: Unable to get checksum for grub-native SRC_URI entry script-Remove-unused-fields-from-grub_script_functio.patch: file could not be found
+WARNING: /home/kwalsh/workspace/poky/meta/recipes-bsp/grub/grub_2.04.bb: Unable to get checksum for grub-native SRC_URI entry CVE-2020-15706-script-Avoid-a-use-after-free-when-redefining-a-func.patch: file could not be found
+WARNING: /home/kwalsh/workspace/poky/meta/recipes-bsp/grub/grub_2.04.bb: Unable to get checksum for grub-native SRC_URI entry CVE-2020-15707-linux-Fix-integer-overflows-in-initrd-size-handling.patch: file could not be found
+WARNING: /home/kwalsh/workspace/poky/meta/recipes-bsp/grub/grub_2.04.bb: Unable to get checksum for grub-native SRC_URI entry determinism.patch: file could not be found
+WARNING: /home/kwalsh/workspace/poky/meta/recipes-bsp/grub/grub_2.04.bb: Unable to get checksum for grub SRC_URI entry CVE-2020-10713.patch: file could not be found
+WARNING: /home/kwalsh/workspace/poky/meta/recipes-bsp/grub/grub_2.04.bb: Unable to get checksum for grub SRC_URI entry calloc-Make-sure-we-always-have-an-overflow-checking.patch: file could not be found
+WARNING: /home/kwalsh/workspace/poky/meta/recipes-bsp/grub/grub_2.04.bb: Unable to get checksum for grub SRC_URI entry lvm-Add-LVM-cache-logical-volume-handling.patch: file could not be found
+WARNING: /home/kwalsh/workspace/poky/meta/recipes-bsp/grub/grub_2.04.bb: Unable to get checksum for grub SRC_URI entry CVE-2020-14308-calloc-Use-calloc-at-most-places.patch: file could not be found
+WARNING: /home/kwalsh/workspace/poky/meta/recipes-bsp/grub/grub_2.04.bb: Unable to get checksum for grub SRC_URI entry safemath-Add-some-arithmetic-primitives-that-check-f.patch: file could not be found
+WARNING: /home/kwalsh/workspace/poky/meta/recipes-bsp/grub/grub_2.04.bb: Unable to get checksum for grub SRC_URI entry CVE-2020-14309-CVE-2020-14310-CVE-2020-14311-malloc-Use-overflow-checking-primitives-where-we-do-.patch: file could not be found
+WARNING: /home/kwalsh/workspace/poky/meta/recipes-bsp/grub/grub_2.04.bb: Unable to get checksum for grub SRC_URI entry script-Remove-unused-fields-from-grub_script_functio.patch: file could not be found
+WARNING: /home/kwalsh/workspace/poky/meta/recipes-bsp/grub/grub_2.04.bb: Unable to get checksum for grub SRC_URI entry CVE-2020-15706-script-Avoid-a-use-after-free-when-redefining-a-func.patch: file could not be found
+WARNING: /home/kwalsh/workspace/poky/meta/recipes-bsp/grub/grub_2.04.bb: Unable to get checksum for grub SRC_URI entry CVE-2020-15707-linux-Fix-integer-overflows-in-initrd-size-handling.patch: file could not be found
+WARNING: /home/kwalsh/workspace/poky/meta/recipes-bsp/grub/grub_2.04.bb: Unable to get checksum for grub SRC_URI entry determinism.patch: file could not be found
