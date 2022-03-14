@@ -1,1 +1,0 @@
-ERROR: ParseError at /home/kwalsh/workspace/poky/meta/recipes-bsp/grub/grub-efi_2.02.bb:3: Could not include required file conf/image-uefi.conf
