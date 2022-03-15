@@ -1,7 +1,7 @@
-From 5506296ef55a6e4916febab63805ddf2d5a5293c Mon Sep 17 00:00:00 2001
+From 70731329feb7ba20364aa37aed83d920de97f028 Mon Sep 17 00:00:00 2001
 From: Khem Raj <raj.khem@gmail.com>
 Date: Wed, 18 Mar 2015 00:11:22 +0000
-Subject: [PATCH 07/30] readlib: Add OECORE_KNOWN_INTERPRETER_NAMES to known
+Subject: [PATCH 28/29] readlib: Add OECORE_KNOWN_INTERPRETER_NAMES to known
  names
 
 This bolts in a hook for OE to pass its own version of interpreter
@@ -17,7 +17,7 @@ Signed-off-by: Khem Raj <raj.khem@gmail.com>
  1 file changed, 1 insertion(+)
 
 diff --git a/elf/readlib.c b/elf/readlib.c
-index c9743e6692..6307f918fc 100644
+index 994a4426a1..baabf099b1 100644
 --- a/elf/readlib.c
 +++ b/elf/readlib.c
 @@ -51,6 +51,7 @@ static struct known_names interpreters[] =
@@ -29,5 +29,5 @@ index c9743e6692..6307f918fc 100644
  
  static struct known_names known_libs[] =
 -- 
-2.20.1
+2.27.0
 

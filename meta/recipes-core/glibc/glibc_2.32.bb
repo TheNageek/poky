@@ -1,64 +1,53 @@
 require glibc.inc
+require glibc-version.inc
 
-LIC_FILES_CHKSUM = "file://LICENSES;md5=cfc0ed77a9f62fa62eded042ebe31d72 \
-      file://COPYING;md5=b234ee4d69f5fce4486a80fdaf4a4263 \
-      file://posix/rxspencer/COPYRIGHT;md5=dc5485bb394a13b2332ec1c785f5d83a \
-      file://COPYING.LIB;md5=4fbd65380cdd255951079008b364516c"
+# whitelist CVE's with fixes in latest release/2.32/master branch
+CVE_CHECK_WHITELIST += "CVE-2019-25013 CVE-2020-10029 CVE-2020-27618 CVE-2021-27645 CVE-2021-3326"
 
 DEPENDS += "gperf-native bison-native make-native"
 
-PV = "2.29"
-
-SRCREV ?= "86013ef5cea322b8f4b9c22f230c22cce369e947"
-
-SRCBRANCH ?= "release/${PV}/master"
-
-GLIBC_GIT_URI ?= "git://sourceware.org/git/glibc.git"
-UPSTREAM_CHECK_GITTAGREGEX = "(?P<pver>\d+\.\d+(\.(?!90)\d+)*)"
-
 NATIVESDKFIXES ?= ""
 NATIVESDKFIXES_class-nativesdk = "\
-           file://0001-nativesdk-glibc-Look-for-host-system-ld.so.cache-as-.patch \
-           file://0002-nativesdk-glibc-Fix-buffer-overrun-with-a-relocated-.patch \
-           file://0003-nativesdk-glibc-Raise-the-size-of-arrays-containing-.patch \
-           file://0004-nativesdk-glibc-Allow-64-bit-atomics-for-x86.patch \
-           file://0005-nativesdk-glibc-Make-relocatable-install-for-locales.patch \
+           file://0003-nativesdk-glibc-Look-for-host-system-ld.so.cache-as-.patch \
+           file://0004-nativesdk-glibc-Fix-buffer-overrun-with-a-relocated-.patch \
+           file://0005-nativesdk-glibc-Raise-the-size-of-arrays-containing-.patch \
+           file://0006-nativesdk-glibc-Allow-64-bit-atomics-for-x86.patch \
+           file://0007-nativesdk-glibc-Make-relocatable-install-for-locales.patch \
 "
 
-SRC_URI = "${GLIBC_GIT_URI};branch=${SRCBRANCH};name=glibc \
+SRC_URI =  "${GLIBC_GIT_URI};branch=${SRCBRANCH};name=glibc \
            file://etc/ld.so.conf \
            file://generate-supported.mk \
            file://makedbs.sh \
            \
            ${NATIVESDKFIXES} \
-           file://0006-fsl-e500-e5500-e6500-603e-fsqrt-implementation.patch \
-           file://0007-readlib-Add-OECORE_KNOWN_INTERPRETER_NAMES-to-known-.patch \
-           file://0008-ppc-sqrt-Fix-undefined-reference-to-__sqrt_finite.patch \
-           file://0009-__ieee754_sqrt-f-are-now-inline-functions-and-call-o.patch \
-           file://0010-Quote-from-bug-1443-which-explains-what-the-patch-do.patch \
-           file://0011-eglibc-run-libm-err-tab.pl-with-specific-dirs-in-S.patch \
-           file://0012-__ieee754_sqrt-f-are-now-inline-functions-and-call-o.patch \
-           file://0013-sysdeps-gnu-configure.ac-handle-correctly-libc_cv_ro.patch \
-           file://0014-Add-unused-attribute.patch \
+           file://0008-fsl-e500-e5500-e6500-603e-fsqrt-implementation.patch \
+           file://0009-ppc-sqrt-Fix-undefined-reference-to-__sqrt_finite.patch \
+           file://0010-__ieee754_sqrt-f-are-now-inline-functions-and-call-o.patch \
+           file://0011-Quote-from-bug-1443-which-explains-what-the-patch-do.patch \
+           file://0012-eglibc-run-libm-err-tab.pl-with-specific-dirs-in-S.patch \
+           file://0013-__ieee754_sqrt-f-are-now-inline-functions-and-call-o.patch \
+           file://0014-sysdeps-gnu-configure.ac-handle-correctly-libc_cv_ro.patch \
            file://0015-yes-within-the-path-sets-wrong-config-variables.patch \
            file://0016-timezone-re-written-tzselect-as-posix-sh.patch \
            file://0017-Remove-bash-dependency-for-nscd-init-script.patch \
            file://0018-eglibc-Cross-building-and-testing-instructions.patch \
            file://0019-eglibc-Help-bootstrap-cross-toolchain.patch \
-           file://0020-eglibc-Clear-cache-lines-on-ppc8xx.patch \
-           file://0021-eglibc-Resolve-__fpscr_values-on-SH4.patch \
-           file://0022-eglibc-Forward-port-cross-locale-generation-support.patch \
-           file://0023-Define-DUMMY_LOCALE_T-if-not-defined.patch \
-           file://0024-localedef-add-to-archive-uses-a-hard-coded-locale-pa.patch \
-           file://0025-elf-dl-deps.c-Make-_dl_build_local_scope-breadth-fir.patch \
-           file://0028-intl-Emit-no-lines-in-bison-generated-files.patch \
-           file://0029-inject-file-assembly-directives.patch \
-           file://0030-locale-prevent-maybe-uninitialized-errors-with-Os-BZ.patch \
-           file://0001-x86-64-memcmp-Use-unsigned-Jcc-instructions-on-size-.patch \
-           file://CVE-2019-9169.patch \
-           file://CVE-2019-19126.patch \
-"
-
+           file://0020-eglibc-Resolve-__fpscr_values-on-SH4.patch \
+           file://0021-eglibc-Forward-port-cross-locale-generation-support.patch \
+           file://0022-Define-DUMMY_LOCALE_T-if-not-defined.patch \
+           file://0023-localedef-add-to-archive-uses-a-hard-coded-locale-pa.patch \
+           file://0024-elf-dl-deps.c-Make-_dl_build_local_scope-breadth-fir.patch \
+           file://0025-intl-Emit-no-lines-in-bison-generated-files.patch \
+           file://0026-inject-file-assembly-directives.patch \
+           file://0027-locale-prevent-maybe-uninitialized-errors-with-Os-BZ.patch \
+           file://0028-readlib-Add-OECORE_KNOWN_INTERPRETER_NAMES-to-known-.patch \
+           file://0029-wordsize.h-Unify-the-header-between-arm-and-aarch64.patch \
+           file://0030-powerpc-Do-not-ask-compiler-for-finding-arch.patch \
+           file://0031-linux-Allow-adjtime-with-NULL-argument-BZ-26833.patch \
+           file://CVE-2020-29562.patch \
+           file://CVE-2020-29573.patch \
+           "
 S = "${WORKDIR}/git"
 B = "${WORKDIR}/build-${TARGET_SYS}"
 
@@ -84,12 +73,14 @@ EXTRA_OECONF = "--enable-kernel=${OLDEST_KERNEL} \
                 --enable-stackguard-randomization \
                 --disable-crypt \
                 --with-default-link \
-                --enable-nscd \
                 ${@bb.utils.contains_any('SELECTED_OPTIMIZATION', '-O0 -Og', '--disable-werror', '', d)} \
                 ${GLIBCPIE} \
                 ${GLIBC_EXTRA_OECONF}"
 
 EXTRA_OECONF += "${@get_libc_fpu_setting(bb, d)}"
+
+PACKAGECONFIG ??= "nscd"
+PACKAGECONFIG[nscd] = "--enable-nscd,--disable-nscd"
 
 do_patch_append() {
     bb.build.exec_func('do_fix_readlib_c', d)
@@ -109,9 +100,8 @@ do_configure () {
         CPPFLAGS="" oe_runconf
 }
 
+LDFLAGS += "-fuse-ld=bfd"
 do_compile () {
-	# -Wl,-rpath-link <staging>/lib in LDFLAGS can cause breakage if another glibc is in staging
-	LDFLAGS="-fuse-ld=bfd"
 	base_do_compile
 	echo "Adjust ldd script"
 	if [ -n "${RTLDLIST}" ]
